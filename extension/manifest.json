@@ -1,0 +1,30 @@
+{
+    "manifest_version": 2,
+    "name": "PixBot Extension",
+    "short_name": "PixBot",
+    "description": "Extension description",
+    "author": "AndBondStyle",
+    "version": "0.1",
+    "icons": {
+        "16": "images/icons/16.png",
+        "48": "images/icons/48.png",
+        "128": "images/icons/128.png"
+    },
+    "permissions": [
+        "*://*.userapi.com/*"
+    ],
+    "browser_action": {
+        "default_title": "PixBot Extension",
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [{
+        "matches": ["*://vk.com/*"],
+        "css": ["content.css"],
+        "js": ["content.js"],
+        "run_at": "document_idle"
+    }],
+    "background": {
+        "persistent": false,
+        "scripts": ["background.js"]
+    }
+}
